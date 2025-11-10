@@ -13,10 +13,6 @@
  * queue.getUnderlyingList() // returns { value: 3, next: null }
  */
 class Queue {
-  getUnderlyingList() {
-    return this.head || null;
-  }
-
   enqueue(value) {
     const node = new ListNode(value);
 
@@ -38,6 +34,18 @@ class Queue {
     if (!this.head) this.tail = null;
 
     return value;
+  }
+
+  getUnderlyingList() {
+    function toObject(node) {
+      if (!node) return null;
+      return {
+        value: node.value,
+        next: toObject(node.next)
+      };
+    }
+
+    return toObject(this.head);
   }
 }
 
