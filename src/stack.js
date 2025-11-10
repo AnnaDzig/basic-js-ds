@@ -1,10 +1,10 @@
 //const { NotImplementedError } = require('../lib/errors');
-const stack = new Stack();
+
 /**
  * Implement the Stack with a given interface via array.
  *
  * @example
- * 
+ * const stack = new Stack();
  *
  * stack.push(1); // adds the element to the stack
  * stack.peek(); // returns the peek, but doesn't delete it, returns 1
